@@ -1,0 +1,11 @@
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+/*
+tets
+ */
+
+input[type="file"] {
+  display: none;
+}
