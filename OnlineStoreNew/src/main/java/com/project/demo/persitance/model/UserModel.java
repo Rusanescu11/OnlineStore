@@ -7,6 +7,7 @@ import com.project.demo.common.util.Hasher;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 @Entity
 @Table(name = "user")
@@ -38,7 +39,7 @@ public class UserModel {
     private Role role;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<RoleModel> roleList;
+    private List<RoleModel> roleList=new ArrayList<>();
 
     @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "user")
     @JsonIgnoreProperties("user")

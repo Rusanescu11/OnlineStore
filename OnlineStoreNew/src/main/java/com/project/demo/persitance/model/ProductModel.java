@@ -28,7 +28,7 @@ public class ProductModel {
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnoreProperties("products")
     private ManufacturerModel manufacturer;
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "product", cascade = CascadeType.MERGE)
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "product", cascade = CascadeType.MERGE,orphanRemoval = true)
     @JsonIgnoreProperties("product")
     private PhotoP photos;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", orphanRemoval = false)
